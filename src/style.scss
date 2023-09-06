@@ -1,0 +1,79 @@
+.gallery {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.photo-card {
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 5px;
+
+  overflow: hidden;
+  transition: box-shadow 350ms ease-in-out;
+
+  &:hover {
+    box-shadow: 2px 1px 3px 0px rgba(0, 0, 0, 0.3);
+  }
+}
+
+button {
+  border-radius: 4px;
+  height: 46px;
+
+  border: 2px solid #79a4f3;
+  border-radius: 4px;
+
+  background: #79a4f3;
+  color: #ffffff;
+}
+
+button:hover,
+button:focus {
+  background-color: #00266d;
+  border-color: #00266d;
+}
+
+input {
+  width: 200px;
+  height: 40px;
+  padding-left: 16px;
+
+  color: #000000;
+  background-color: #79a4f3;
+  border: 2px solid #79a4f3;
+  border-radius: 4px;
+}
+
+input::placeholder {
+  color: #7188b3;
+  line-height: 2;
+  text-transform: capitalize;
+}
+
+input:focus {
+  outline: none;
+  border-color: #7188b3;
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+
+  font-size: 12px;
+  text-align: center;
+  color: #464646;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.hidden {
+  display: none;
+}
