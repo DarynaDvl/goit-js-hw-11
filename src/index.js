@@ -24,6 +24,10 @@ async function onSearch(event) {
   const formData = new FormData(event.currentTarget);
   query = formData.get('searchQuery').trim();
 
+  if (!query) {
+    return errorQuery();
+  }
+
   try {
     const hits = await getImg(query);
 
@@ -46,12 +50,11 @@ async function onLoadMore(entries) {
   if (entries[0].isIntersecting) {
     page += 1;
     try {
-      const hits = await getImg(query, page);
-
       if (refs.gallery.childElementCount >= totalHits) {
         observer.unobserve(refs.sentinel);
         endOfSearch();
       } else {
+        const hits = await getImg(query, page);
         createMarkup(hits);
         smoothScrollGallery();
         gallery.refresh();
